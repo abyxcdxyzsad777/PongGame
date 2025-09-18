@@ -28,6 +28,11 @@ Play against a computer-controlled AI, control your paddle with your mouse, and 
 
 ## Demo
 
+###
+<div align="center">
+  <img height="390" src="https://drive.google.com/file/d/1YEwrHsnWWD-YpI2ncQYF40MLMzN2q7U6/view?usp=sharing"  />
+</div>
+###
 [https://drive.google.com/drive/u/0/home]
 https://drive.google.com/file/d/1YEwrHsnWWD-YpI2ncQYF40MLMzN2q7U6/view?usp=sharing
 (https://drive.google.com/uc?id=YOUR_IMAGE_ID)
