@@ -1,23 +1,161 @@
 body {
-    background: #181818;
+    background: linear-gradient(135deg, #181818 0%, #232526 100%);
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    margin-top: 20px;
-    font-size: 2.5em;
+    margin-top: 22px;
+    font-size: 2.2em;
     letter-spacing: 2px;
+    font-weight: 600;
+    text-shadow: 0 2px 8px #222;
+}
+
+#game-container {
+    position: relative;
+    width: 90vw;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
 }
 
 #pong {
-    background: #222;
+    background: linear-gradient(120deg, #30353b 0%, #232526 100%);
     display: block;
-    margin: 30px auto 0 auto;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    margin: 0 auto;
+    border: 2.5px solid #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 40px 4px rgba(0,0,0,0.7);
+    width: 100%;
+    max-width: 800px;
+    height: 56vw;
+    max-height: 500px;
+    transition: box-shadow .2s;
+}
+
+@media (max-width: 600px) {
+    #pong {
+        height: 60vw;
+        max-height: 420px;
+    }
+    #game-container {
+        width: 98vw;
+    }
+}
+
+#overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(34,34,34,0.77);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.25s;
+}
+
+#guide {
+    background: rgba(0, 0, 0, 0.87);
+    border-radius: 12px;
+    padding: 28px 22px 16px 22px;
+    color: #fff;
+    min-width: 240px;
+    box-shadow: 0 2px 18px #111c;
+}
+
+#guide h2 {
+    margin: 0 0 10px 0;
+    color: #09f;
+    font-size: 1.3em;
+}
+
+#guide ul {
+    text-align: left;
+    margin: 0 0 16px 0;
+    padding: 0 0 0 20px;
+    font-size: 1em;
+}
+
+#guide button, #restartBtn {
+    font-size: 1.18em;
+    padding: 11px 32px;
+    border: none;
+    border-radius: 30px;
+    background-color: #09f;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 16px #0ff4;
+    transition: background .2s, transform .2s;
+}
+
+#guide button:hover, #restartBtn:hover {
+    background: linear-gradient(90deg, #16e2f5 0%, #09f 100%);
+    color: #181818;
+    transform: scale(1.08);
+}
+
+#restartBtn {
+    position: absolute;
+    right: 16px;
+    bottom: -46px;
+    z-index: 3;
+    padding: 7px 24px;
+    font-size: 1em;
+    background: #444;
+    color: #fff;
+    border-radius: 30px;
+    opacity: 0.88;
+}
+
+#restartBtn:active {
+    background: #09f;
+    color: #fff;
+}
+
+#difficulty {
+    position: absolute;
+    left: 16px;
+    bottom: -38px;
+    color: #16e2f5;
+    font-size: 1.16em;
+    background: rgba(0,0,0,0.34);
+    padding: 2px 14px 4px 14px;
+    border-radius: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    user-select: none;
+}
+
+.credit {
+    margin: 36px 0 10px 0;
+    color: #b2b2b2;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+.credit a {
+    color: #09f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color .15s;
+}
+
+.credit a:hover {
+    color: #16e2f5;
+}
+
+/* Hiệu ứng rung màn hình */
+.shake {
+    animation: shake 0.36s cubic-bezier(.36,.07,.19,.97) both;
+}
+@keyframes shake {
+    10%, 90% { transform: translateX(-2px); }
+    20%, 80% { transform: translateX(3px); }
+    30%, 50%, 70% { transform: translateX(-6px); }
+    40%, 60% { transform: translateX(6px); }
 }

@@ -3,11 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple Pong Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Simple Pong Game</h1>
-    <canvas id="pong" width="800" height="500"></canvas>
+    <div id="game-container">
+        <canvas id="pong"></canvas>
+        <div id="overlay">
+            <div id="guide">
+                <h2>Hướng dẫn chơi</h2>
+                <ul>
+                    <li>Di chuyển chuột để điều khiển thanh bên trái.</li>
+                    <li>Chặn bóng và ghi điểm vào lưới đối thủ (AI).</li>
+                    <li>Đạt 5 điểm để chiến thắng!</li>
+                    <li>Khi thắng, độ khó sẽ tăng lên.</li>
+                </ul>
+                <button id="startBtn">Bắt đầu chơi</button>
+            </div>
+        </div>
+        <button id="restartBtn">Chơi lại</button>
+        <div id="difficulty">Độ khó: <span id="difficulty-level">1</span></div>
+    </div>
+    <div class="credit">© 2025 Pong by <a href="https://github.com/abyxcdxyzsad777" target="_blank">abyxcdxyzsad777</a></div>
+    <!-- Âm thanh -->
+    <audio id="audio-paddle" src="audio/paddle.wav"></audio>
+    <audio id="audio-wall" src="audio/wall.wav"></audio>
+    <audio id="audio-score" src="audio/score.wav"></audio>
+    <audio id="audio-win" src="audio/win.wav"></audio>
+    <audio id="audio-lose" src="audio/lose.wav"></audio>
     <script src="game.js"></script>
 </body>
 </html>
